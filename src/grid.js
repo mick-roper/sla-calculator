@@ -58,7 +58,7 @@ const Row = ({ provider, region, services }) => (<tr>
         </ul>
     </td>
     <td>
-        {getAvailability(services).toFixed(3)}
+        {(getAvailability(services).toFixed(5) * 100)}%
     </td>
 </tr>)
 
