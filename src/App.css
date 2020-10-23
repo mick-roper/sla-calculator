@@ -1,3 +1,25 @@
-.grid-container {
-    display: inline-grid;
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container>.item {
+    flex-grow: 4;
+    flex-shrink: 3;
+}
+
+.header {
+    height: 100px;
+}
+
+.content {
+    flex-grow: 1;
+}
+
+.footer {
+    height: 75px;
+    position: absolute;
+    bottom: 0;
 }
