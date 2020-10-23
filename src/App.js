@@ -1,8 +1,7 @@
 import React from 'react';
 import Grid from './grid';
 import data from './data.json';
-
-console.log(data);
+import './App.css';
 
 export default () => (<div className="grid-container">
   <header>
