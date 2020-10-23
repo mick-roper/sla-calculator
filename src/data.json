@@ -1,0 +1,17 @@
+{
+    "aws": {
+        "regions": {
+            "services": {
+                "s3": {
+                    "availability": 99.95
+                },
+                "s3-infrequent-access": {
+                    "availability": 99.95
+                },
+                "lambda": {
+                    "availability": 99.5
+                }
+            }
+        }
+    }
+}
