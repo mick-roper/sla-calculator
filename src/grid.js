@@ -25,6 +25,69 @@ const data = {
                 'lambda': 0.995,
                 's3-infrequent-access': 0.99
             }
+        },
+        {
+            provider: 'aws',
+            region: 'us-east-1',
+            services: {
+                's3': 0.9995,
+                'lambda': 0.995,
+                's3-infrequent-access': 0.99
+            }
+        },
+        {
+            provider: 'aws',
+            region: 'us-east-1',
+            services: {
+                's3': 0.9995,
+                'lambda': 0.995,
+                's3-infrequent-access': 0.99
+            }
+        },
+        {
+            provider: 'aws',
+            region: 'us-east-1',
+            services: {
+                's3': 0.9995,
+                'lambda': 0.995,
+                's3-infrequent-access': 0.99
+            }
+        },
+        {
+            provider: 'aws',
+            region: 'us-east-1',
+            services: {
+                's3': 0.9995,
+                'lambda': 0.995,
+                's3-infrequent-access': 0.99
+            }
+        },
+        {
+            provider: 'aws',
+            region: 'us-east-1',
+            services: {
+                's3': 0.9995,
+                'lambda': 0.995,
+                's3-infrequent-access': 0.99
+            }
+        },
+        {
+            provider: 'aws',
+            region: 'us-east-1',
+            services: {
+                's3': 0.9995,
+                'lambda': 0.995,
+                's3-infrequent-access': 0.99
+            }
+        },
+        {
+            provider: 'aws',
+            region: 'us-east-1',
+            services: {
+                's3': 0.9995,
+                'lambda': 0.995,
+                's3-infrequent-access': 0.99
+            }
         }
     ]
 }

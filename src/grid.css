@@ -15,8 +15,8 @@
 }
 
 .grid {
-    display: inline-flex;
-    flex-direction: row;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .grid-item {
@@ -24,6 +24,7 @@
     padding: 10px;
     border-radius: 15px;
     flex-flow: column wrap;
+    flex-grow: 1;
 }
 
 .grid-item ul {
