@@ -50,28 +50,28 @@ const calculateSystemAvailability = ({ global, regional }) => {
     return systemAvailability
 }
 
-const Item = ({ provider, region, services }) => (<div className="grid-item">
+const Item = ({ provider, region, services }) => (<div className="grid-item green">
     <div>
-        <p>Provider: {provider}</p>
-        <p>Region: {region}</p>
-        <p>Availability: {(getAvailability(services).toFixed(4) * 100)}%</p>
+        <p>Provider: <span className="badge orange">{provider}</span></p>
+        <p>Region: <span className="badge orange">{region}</span></p>
+        <p className="badge red">Availability: {(getAvailability(services).toFixed(4) * 100)}%</p>
     </div>
     <div>
         Services:
         <ul>
-            {Object.entries(services).map(([key], i) => (<li key={i}>{key}</li>))}
+            {Object.entries(services).map(([key], i) => (<li className="blue" key={i}>{key}</li>))}
         </ul>
     </div>
 </div>)
 
-export default () => {
-    return <div className="grid">
+export default () => (<div>
+    <div className="grid">
         <Item provider={data.global.provider} region="Global" services={data.global.services} />
         {
             data.regional.map((region, i) => <Item key={i} {...region} />)
         }
-        <h2>
-            System Availability: {calculateSystemAvailability(data).toFixed(4) * 100}%
-        </h2>
     </div>
-}
+    <h2>
+        System Availability: {calculateSystemAvailability(data).toFixed(4) * 100}%
+    </h2>
+</div>)
