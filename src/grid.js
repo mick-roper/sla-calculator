@@ -25,69 +25,6 @@ const data = {
                 'lambda': 0.995,
                 's3-infrequent-access': 0.99
             }
-        },
-        {
-            provider: 'aws',
-            region: 'us-east-1',
-            services: {
-                's3': 0.9995,
-                'lambda': 0.995,
-                's3-infrequent-access': 0.99
-            }
-        },
-        {
-            provider: 'aws',
-            region: 'us-east-1',
-            services: {
-                's3': 0.9995,
-                'lambda': 0.995,
-                's3-infrequent-access': 0.99
-            }
-        },
-        {
-            provider: 'aws',
-            region: 'us-east-1',
-            services: {
-                's3': 0.9995,
-                'lambda': 0.995,
-                's3-infrequent-access': 0.99
-            }
-        },
-        {
-            provider: 'aws',
-            region: 'us-east-1',
-            services: {
-                's3': 0.9995,
-                'lambda': 0.995,
-                's3-infrequent-access': 0.99
-            }
-        },
-        {
-            provider: 'aws',
-            region: 'us-east-1',
-            services: {
-                's3': 0.9995,
-                'lambda': 0.995,
-                's3-infrequent-access': 0.99
-            }
-        },
-        {
-            provider: 'aws',
-            region: 'us-east-1',
-            services: {
-                's3': 0.9995,
-                'lambda': 0.995,
-                's3-infrequent-access': 0.99
-            }
-        },
-        {
-            provider: 'aws',
-            region: 'us-east-1',
-            services: {
-                's3': 0.9995,
-                'lambda': 0.995,
-                's3-infrequent-access': 0.99
-            }
         }
     ]
 }
@@ -98,13 +35,13 @@ const getAvailability = (services) => Object.
     reduce((a, b) => a * b)
 
 const calculateSystemAvailability = ({ global, regional }) => {
-    const unavailability = regional.map(({ services }) => getAvailability(services))
+    const unavailability = regional.map(({ services }) => 1 - getAvailability(services))
     console.log('regional unavailability', unavailability)
 
     const globalAvailability = getAvailability(global.services)
     console.log('globalAvailabiltiy', globalAvailability)
 
-    const totalRegionalAvailability = unavailability.reduce((a, b) => a * b)
+    const totalRegionalAvailability = 1 - unavailability.reduce((a, b) => a * b)
     console.log('total regional availability', totalRegionalAvailability)
 
     const systemAvailability = globalAvailability * totalRegionalAvailability
@@ -113,7 +50,7 @@ const calculateSystemAvailability = ({ global, regional }) => {
     return systemAvailability
 }
 
-const Item = ({ provider, region, services }) => (<div className="grid-item green">
+const Item = ({ provider, region, services, colour}) => (<div className={`grid-item ${colour || 'green'}`}>
     <div>
         <p>Provider: <span className="badge orange">{provider}</span></p>
         <p>Region: <span className="badge orange">{region}</span></p>
@@ -129,9 +66,9 @@ const Item = ({ provider, region, services }) => (<div className="grid-item gree
 
 export default () => (<div>
     <div className="grid">
-        <Item provider={data.global.provider} region="Global" services={data.global.services} />
+        <Item provider={data.global.provider} region="Global" services={data.global.services} colour="turqoise" />
         {
-            data.regional.map((region, i) => <Item key={i} {...region} />)
+            data.regional.map((region, i) => <Item className="green" key={i} {...region} />)
         }
     </div>
     <h2>
