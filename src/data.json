@@ -2,6 +2,9 @@
     "aws": {
         "regions": {
             "services": {
+                "route53": {
+                    "availability": 99.5
+                },
                 "s3": {
                     "availability": 99.95
                 },
@@ -13,5 +16,7 @@
                 }
             }
         }
-    }
+    },
+    "azure": {},
+    "gcp": {}
 }
