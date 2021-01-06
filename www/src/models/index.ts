@@ -1,10 +1,10 @@
 export interface Provider {
     Name: string,
-    Services: Service[]
+    Services: Service[],
+    Regions: string[],
 }
 
 export interface Service {
     Name: string,
-    Region: string,
     Availability: number,
 }
