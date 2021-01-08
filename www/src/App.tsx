@@ -24,6 +24,10 @@ interface ServiceModel {
   systemAvailability: number
 }
 
+interface GlobalServiceAdder {
+
+}
+
 const caluclateCompoundAvailability = (services: Service[]): number => services.length > 0 ? services
   .map(({ availability }) => availability)
   .reduce((a, b) => a * b) : 1
