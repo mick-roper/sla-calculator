@@ -1,13 +1,13 @@
 import React from 'react'
 
 interface Props {
-    getAvailability: () => number
+    availability: number
 }
 
-export const Availability: React.FC<Props> = (props): React.ReactElement => {
+export const Availability: React.FC<Props> = ({ availability }): React.ReactElement => {
     return (
         <div>
-            <h3>Availability {props.getAvailability()}%</h3>
+            <h1>System Availability {(availability * 100).toFixed(4)}%</h1>
         </div>
     )
 }
